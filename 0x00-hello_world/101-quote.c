@@ -2,9 +2,9 @@
 #include <unistd.h>
 
 /**
- * Main - Entry point
+ * main - Entry point
  *
- * Return 1 (Success)
+ * Return: 1 (Success)
  *
  */
 
