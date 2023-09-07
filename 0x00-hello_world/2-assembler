@@ -1,2 +1,2 @@
 #!/bin/bash
-as "$CFILE" -o c.s
+gss -S $CFILE -o 
