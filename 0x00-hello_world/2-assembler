@@ -1,2 +1,2 @@
 #!/bin/bash
-gss -S $CFILE -o 
+gcc -S $CFILE -o 
