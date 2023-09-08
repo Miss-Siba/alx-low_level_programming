@@ -3,8 +3,8 @@
 #include<stdio.h>
 
 /**
- * main: Assign a random number to the variable n each time.
- * determine whether it is greater than 5, less than 6 or is 0. 
+ * main: Assign a random number to the variable n each time
+ * determine whether it is greater than 5, less than 6 or is 0.
  *
  * Return: Always 0.
  */
@@ -23,7 +23,7 @@ int main(void)
 
 	else if ((n % 10) < 6 && (n % 10) != 0)
 	{
-		printf("Last digit of %d is %d and is greater than 6 and not 0\n", n, n % 10);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n,n % 10);
 	}
 
 	else
