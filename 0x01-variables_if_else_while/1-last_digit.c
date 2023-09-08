@@ -3,8 +3,8 @@
 #include<stdio.h>
 
 /**
- * main: Assign a random number to the variable n each time
- * determine whether it is greater than 5, less than 6 or is 0.
+ * main - Prints a random number to the variable n,
+ * to determine whether it is greater than 5, less than 6 or is 0.
  *
  * Return: Always 0.
  */
