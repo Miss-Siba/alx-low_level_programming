@@ -1,8 +1,8 @@
 #include<stdio.h>
 /**
  * main - prints number of arguments passed.
- * @arg c: counts command line arguments
- * @arg v: array containing arguements.
+ * @argc: counts command line arguments
+ * @argv: array containing arguements.
  * Return: 0
  */
 int main(int argc, char *argv[])
