@@ -10,6 +10,7 @@
  */
 char *_strdup(char *str)
 {
+	int i;
 	size_t len = strlen(str);
 	char *duplicate = (char *)malloc(len + 1);
 
@@ -18,11 +19,16 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+
 	if (duplicate == NULL)
 	{
 		return (NULL);
 	}
 	strcpy(duplicate, str);
-	return (duplicate);
+
+		return (duplicate);
 }
 
