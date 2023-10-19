@@ -1,14 +1,22 @@
 #ifndef LISTS_H
-#define LIST_H
+#define LISTS_H
+
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
 
-typedef struct list_s 
+/**
+ * struct list_s - A singly-linked list structure.
+ * @str: The string data stored in the node.
+ * @len: The length of the string.
+ * @next: A pointer to the next node in the list.
+ */
+
+typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 }
 list_t;
 
