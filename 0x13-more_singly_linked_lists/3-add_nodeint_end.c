@@ -3,6 +3,7 @@
 /**
  * add_nodeint_end - adds a new node at the end
  * @n: integer to pinter
+ * @head: pointer to a pointer to the head of the list
  * Return: the address of the new element, or NULL if it failed
  */
 
