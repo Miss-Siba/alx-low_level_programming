@@ -11,35 +11,35 @@
  */
 size_t looped_listint_len(const listint_t *head)
 {
-	const listint_t *apple, *sauce;
+	const listint_t *tortoise, *hare;
 	size_t node = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
-	apple = head->next;
-	sauce = (head->next)->next;
+	tortoise = head->next;
+	hare = (head->next)->next;
 
-	while (sauce)
+	while (hare)
 	{
-		if (apple == sauce)
+		if (tortoise == hare)
 		{
-			apple = head;
-			while (apple != sauce)
+			tortoise = head;
+			while (tortoise != hare)
 			{
 				node++;
-				apple = apple->next;
-				sauce = sauce->next;
+				tortoise = tortoise->next;
+				hare = hare->next;
 			}
-			apple = apple->next;
-			while (apple != sauce)
+			tortoise = tortoise->next;
+			while (tortoise != hare)
 			{
 				node++;
-				apple = apple->next;
+				tortoise = tortoise->next;
 			}
 			return (node);
 		}
-		apple = apple->next;
-		sauce = (sauce->next)->next;
+		tortoise = tortoise->next;
+		hare = (hare->next)->next;
 	}
 	return (0);
 }
