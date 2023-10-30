@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * error_and_exit - checks if file can beopened.
+ * error_file - checks if file can beopened.
  * @file_from: file from.
  * @file_to: file to.
  * @argv: arguments.
  */
 
-void error_and_exit(int file_from, int file_to, char *argv[])
+void error_file(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
@@ -40,17 +40,17 @@ int main(int argc, char *argv[])
 	}
 		file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	error_and_exit(file_from, file_to, argv);
+	error_file(file_from, file_to, argv);
 
 	nchars = 1024;
 	while (nchars == 1024)
 	{
 		nchars = read(file_from, buf, 1024);
 		if (nchars == -1)
-			error_and_exit(-1, 0, argv);
+			error_file(-1, 0, argv);
 		nwr = write(file_to, buf, nchars);
 		if (nwr == -1)
-			error_and_exit(0, -1, argv);
+			error_file(0, -1, argv);
 	}
 
 	err_close = close(file_from);
