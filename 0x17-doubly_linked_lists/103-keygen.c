@@ -13,7 +13,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	char password[7], *codex;
 	int len = strlen(argv[1]), i, tmp;
-			
+
 	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 
 	tmp = (len ^ 59) & 63;
@@ -28,7 +28,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	for (i = 0; i < len; i++)
 		tmp *= argv[1][i];
 	password[2] = codex[(tmp ^ 85) & 63];
-	
+
 	tmp = 0;
 	for (i = 0; i < len; i++)
 	{
@@ -37,7 +37,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	}
 	srand(tmp ^ 14);
 	password[3] = codex[rand() & 63];
-	
+
 	tmp = 0;
 	for (i = 0; i < len; i++)
 		tmp += (argv[1][i] * argv[1][i]);
@@ -48,8 +48,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	password[5] = codex[(tmp ^ 229) & 63];
 
 	password[6] = '\0';
-	
+
 	printf("%s", password);
-	
 	return (0);
 }
