@@ -4,7 +4,7 @@
  * binary_search -  searches a sorted array, using binary search.
  * @array: array
  * @size: size of the arrar
- * @value: value at index
+ * @value: value to search for
  * Return: i
  */
 int binary_search(int *array, size_t size, int value)
@@ -23,7 +23,7 @@ int binary_search(int *array, size_t size, int value)
 
 		for (i = lowest; i <= highest; i++)
 		{
-			printf("%d ", array[i]);
+			printf("%d", array[i]);
 			if (i != highest)
 			{
 				printf(", ");
