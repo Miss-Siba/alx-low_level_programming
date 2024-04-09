@@ -19,7 +19,7 @@ int binary_search(int *array, size_t size, int value)
 	while (lowest <= highest)
 	{
 		mid = lowest + (highest - lowest) / 2;
-		printf("Searching in subarray: ");
+		printf("Searching in array: ");
 
 		for (i = lowest; i <= highest; i++)
 		{
