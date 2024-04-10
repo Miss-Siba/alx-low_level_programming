@@ -12,35 +12,38 @@
 
 int jump_search(int *array, size_t size, int value)
 {
-	int jump_step = (int)sqrt(size);
-	int prev = 0;
+	size_t i, jump, jump_step;
 
 	if (array == NULL || size == 0)
 	{
 		return (-1);
 	}
+	/* Calculate the jump step size */
+	jump_step = sqrt(size);
 
-	while (array[(int)fmin(jump_step, size) - 1] < value)
+	/* Perform the jump search */
+	for (i = jump = 0; jump < size && array[jump] < value;)
 	{
-		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
-		prev = jump_step;
-		if (prev >= (int)size)
-		{
-			break;
-		}
-		jump_step += (int)sqrt(size);
+		printf("Value checked array[%ld] = [%d]\n", jump, array[jump]);
+
+		/* Store the previous jump position */
+		i = jump;
+
+		/* Update the jump position */
+		jump += jump_step;
 	}
-	printf("Value found between indexes [%d] and [%d]\n", prev, jump_step);
-	while (prev < fmin(jump_step, (int)size))
-	{
-		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
-		if (array[prev] == value)
-		{
-			printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
-			return (prev);
-		}
-		prev++;
-	}
-	return (-1);
+
+	printf("Value found between indexes [%ld] and [%ld]\n", i, jump);
+
+	/* Adjust the jump position */
+	jump = jump < size - 1 ? jump : size - 1;
+
+	/* Perform a linear search within the identified range */
+	for (; i < jump && array[i] < value; i++)
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+
+	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+
+	/* Check if the value is found and return the corresponding index */
+	return (array[i] == value ? (int)i : -1);
 }
-
